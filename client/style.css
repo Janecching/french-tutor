@@ -87,7 +87,6 @@ body {
     font-size: 15px;
     max-width: 100%;
     overflow-x: scroll;
-    vertical-align: center;
     /* white-space: pre-wrap; */
     -ms-overflow-style: none;
     scrollbar-width: none;
