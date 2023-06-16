@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>French Tutor</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div id="title">
+			<h1 style="margin-bottom: 20px">My french tutor</h1>
+			<p style="margin-bottom: 10px">Select a scenario:</p>
+			<button>Ordering food</button>
+			<button>Checking in a hotel</button>
+			<button>Asking for directions</button>
+			<button>Shopping at a market</button>
+		</div>
+		<div id="app">
+			<div>
+				<div id="chat_container">
+					<div class="wrapper">
+						<div class="chat">
+							<div class="profile" style="background: #10a37f">
+								<img src="./assets/bot.svg" />
+							</div>
+							<div class="message">
+								Bonjour ! Comment puis-je vous aider aujourd'hui ? (Translation:
+								Hello! How can I assist you today?)
+							</div>
+						</div>
+					</div>
+				</div>
+				<form>
+					<textarea
+						name="prompt"
+						rows="1"
+						cols="1"
+						placeholder="type here and press enter to submit"
+					></textarea>
+					<!-- <button type="submit">
+						<img src="assets/send.svg" alt="send" />
+					</button> -->
+				</form>
+			</div>
+			<!-- <div id="additional_column"></div> -->
+		</div>
+
+		<script type="module" src="script.js"></script>
+	</body>
+</html>
