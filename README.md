@@ -16,7 +16,6 @@ Upcoming features:
 ![ezgif com-video-to-gif (5)](https://github.com/Janecching/french-tutor/assets/35574188/30d291ba-04f1-4461-b336-82377dadb580)
 
 Usage
-- View the application here (https://one-day-blue.vercel.app/).
 - Run it locally following installation steps below.
 
 Installation
