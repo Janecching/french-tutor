@@ -14,29 +14,26 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-// , language, level, scenario
-async function generateChatResponse(conversation) {
-    try {
 
+async function generateChatResponse(conversation, language, level, scenario) {
+    try {
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: `You are a french waiter. Use basic french to serve user, provide english translation and correct user's grammar.` },
+                { role: "system", content: `You are a ${language} ${scenario}. Use ${level} ${language} to serve user, provide english translation, correct user's grammar, then provide a natural follow up question in ${level} ${language}` },
                 { role: "user", content: conversation },
             ],
         });
-        // console.log(response.data.choices)
         const reply = response.data.choices[0].message.content.trim();
         return reply;
     } catch (error) {
-        // console.error(error);
+        console.error(error);
         throw error;
     }
 }
 
 
 app.get('/', async(req, res) => {
-    // console.log('GET request received');
     res.status(200).send({
         message: 'Hello from your french tutor!',
     });
@@ -44,22 +41,16 @@ app.get('/', async(req, res) => {
 
 app.post('/', async(req, res) => {
     try {
-        // console.log('POST request received');
         const conversation = req.body.conversation;
         const language = req.body.language;
         const level = req.body.level;
         const scenario = req.body.scenario;
 
-        console.log('Conversation:', conversation);
-        console.log('Language:', language);
-        console.log('Level:', level);
-        console.log('Scenario:', scenario);
-
         const reply = await generateChatResponse(
             conversation,
-            // language,
-            // level,
-            // scenario
+            language,
+            level,
+            scenario
         );
 
         console.log('Bot reply:', reply);
@@ -68,7 +59,7 @@ app.post('/', async(req, res) => {
             bot: reply,
         });
     } catch (error) {
-        // console.error(error);
+        console.error(error);
         res.status(500).send(error || 'Something went wrong');
     }
 });

@@ -72,30 +72,69 @@ document.addEventListener('DOMContentLoaded', function() {
         const top10Words = {
             French: {
                 Beginner: {
-                    'Ordering food': ['Bonjour', 'Merci', 'S\'il vous plaît', 'Menu', 'L\'addition', 'Café', 'Pain', 'Fromage', 'Vin', 'Croissant'],
-                    'Checking in a hotel': ['Chambre', 'Réception', 'Clé', 'Réservation', 'Hôtel', 'Lit', 'Douche', 'Serviette', 'Ascenseur', 'Prix'],
-                    'Asking for directions': ['Où est', 'Rue', 'Droite', 'Gauche', 'Quartier', 'Station de métro', 'Arrêt de bus', 'Bâtiment', 'Loin', 'Près'],
-                    'Shopping at a market': ['Marché', 'Fruits', 'Légumes', 'Viande', 'Poisson', 'Pain', 'Fromage', 'Prix', 'Sacs', 'Caisse'],
+                    'waitress': [
+                        'Bonjour: Hello', 'Merci: Thank you', 'Sil vous plaît: Please ', 'Menu: Menu ', 'L\'addition: The bill',
+                        'Café: Coffee', 'Pain: Bread', 'Fromage: Cheese', 'Vin: Wine', 'Croissant: Croissant',
+                        'Eau: Water', 'Poulet: Chicken', 'Salade: Salad', 'Pâtes: Pasta', 'Pizza: Pizza'
+                    ],
+                    'hotel receptionist': [
+                        'Chambre: Room', 'Réception: Reception', 'Clé: Key', 'Réservation: Reservation', 'Hôtel: Hotel',
+                        'Lit: Bed', 'Douche: Shower', 'Serviette: Towel', 'Ascenseur: Elevator', 'Prix: Price',
+                        'Petit-déjeuner: Breakfast', 'Wifi: Wi-Fi', 'Occupé: Occupied', 'Climatisation: Air conditioning', 'Piscine: Pool'
+                    ],
+                    'tourist information conceirge': [
+                        'Où est: Where is', 'Rue: Street', 'Droite: Right', 'Gauche: Left', 'Quartier: Neighborhood',
+                        'Station de métro: Metro station', 'Arrêt de bus: Bus stop', 'Bâtiment: Building', 'Loin: Far', 'Près: Near',
+                        'Tournez à droite: Turn right', 'Tournez à gauche: Turn left', 'Tout droit: Straight ahead',
+                        'Au coin de: At the corner of', 'Intersection: Intersection'
+                    ],
+                    'vendor at a market': [
+                        'Marché: Market', 'Fruits: Fruits', 'Légumes: Vegetables', 'Viande: Meat', 'Poisson: Fish',
+                        'Pain: Bread', 'Fromage: Cheese', 'Prix: Price', 'Sacs: Bags', 'Caisse: Cash register',
+                        'Étal: Stall', 'Épicerie: Grocery store', 'Commerçant: Vendor', 'Promotion: Promotion', 'Panier: Basket'
+                    ]
                 },
                 Intermediate: {
-                    'Ordering food': ['Apéritif', 'Entrée', 'Plat principal', 'Dessert', 'Carte des vins', 'Menu du jour', 'Réservation', 'Serveur', 'Pourboire', 'Service'],
-                    'Checking in a hotel': ['Réceptionniste', 'Confirmation', 'Facture', 'Bagages', 'Service en chambre', 'Climatisation', 'Wifi', 'Piscine', 'Réveil', 'Occupé'],
-                    'Asking for directions': ['Tournez à droite', 'Tournez à gauche', 'Tout droit', 'Au coin de', 'Intersection', 'Passage piéton', 'Feu de signalisation', 'Plan de la ville', 'Arrêt de taxi', 'Se perdre'],
-                    'Shopping at a market': ['Étal', 'Épicerie', 'Commerçant', 'Promotion', 'Panier', 'Balance', 'Monnaie', 'Rayon', 'Ticket de caisse', 'Retourner'],
-                },
-            },
+                    'waitress': [
+                        'Apéritif: Appetizer', 'Entrée: Starter', 'Plat principal: Main course', 'Dessert: Dessert',
+                        'Carte des vins: Wine list', 'Menu du jour: Daily menu', 'Réservation: Reservation', 'Serveur: Waiter',
+                        'Pourboire: Tip', 'Service: Service', 'Confirmation: Confirmation', 'Facture: Bill', 'Bagages: Luggage',
+                        'Service en chambre: Room service', 'Climatisation: Air conditioning'
+                    ],
+                    'hotel receptionist': [
+                        'Réceptionniste: Receptionist', 'Confirmation: Confirmation', 'Facture: Bill', 'Bagages: Luggage',
+                        'Service en chambre: Room service', 'Climatisation: Air conditioning', 'Wifi: Wi-Fi', 'Piscine: Pool',
+                        'Réveil: Alarm clock', 'Occupé: Occupied', 'Tournez à droite: Turn right', 'Tournez à gauche: Turn left',
+                        'Tout droit: Straight ahead', 'Au coin de: At the corner of', 'Intersection: Intersection'
+                    ],
+                    'tourist information conceirge': [
+                        'Tournez à droite: Turn right', 'Tournez à gauche: Turn left', 'Tout droit: Straight ahead',
+                        'Au coin de: At the corner of', 'Intersection: Intersection', 'Passage piéton: Pedestrian crossing',
+                        'Feu de signalisation: Traffic light', 'Plan de la ville: City map', 'Arrêt de taxi: Taxi stand',
+                        'Se perdre: Get lost', 'Réceptionniste: Receptionist', 'Confirmation: Confirmation',
+                        'Facture: Bill', 'Bagages: Luggage', 'Service en chambre: Room service'
+                    ],
+                    'vendor at a market': [
+                        'Étal: Stall', 'Épicerie: Grocery store', 'Commerçant: Vendor', 'Promotion: Promotion',
+                        'Panier: Basket', 'Balance: Scale', 'Monnaie: Change', 'Rayon: Aisle', 'Ticket de caisse: Receipt',
+                        'Retourner: Return', 'Apéritif: Appetizer', 'Entrée: Starter', 'Plat principal: Main course',
+                        'Dessert: Dessert', 'Carte des vins: Wine list'
+                    ]
+                }
+            }
         };
-
         const vocabularies = top10Words[language][level][scenario];
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '<h3>Generated Vocabularies:</h3>';
-        const list = document.createElement('ul');
+        const vocabTable = document.getElementById('vocabTable');
+
         vocabularies.forEach(word => {
-            const listItem = document.createElement('li');
-            listItem.textContent = word;
-            list.appendChild(listItem);
+            const row = document.createElement('tr');
+
+            const wordCell = document.createElement('td');
+            wordCell.textContent = word;
+
+            row.appendChild(wordCell);
+            vocabTable.appendChild(row);
         });
-        resultsDiv.appendChild(list);
     }
 });
 
@@ -157,7 +196,6 @@ const handleSubmit = async(e) => {
         alert('An error occurred. Please try again.');
     }
 };
-
 
 form.addEventListener('submit', handleSubmit);
 

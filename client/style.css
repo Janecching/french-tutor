@@ -6,26 +6,42 @@
     font-family: "Alegreya Sans", sans-serif;
 }
 
-body {
-    background: #e0e0e1;
+.container {
+    display: flex;
+    height: 100vh;
 }
 
-#title {
-    text-align: center;
+.left {
+    width: 25%;
+    height: 100%;
     background: linear-gradient(#e74fdd, #20E3B2);
     padding: 5%;
+    text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-    #title {
-        padding: 10%;
-    }
+.right {
+    flex: 1;
+    height: 100%;
+    padding: 5%;
+    overflow: scroll;
 }
 
-#app {
-    width: 100vw;
-    display: grid;
-    padding: 30px;
+#preference-form {
+    flex-direction: column;
+    background-color: transparent;
+}
+
+table {
+    margin: 10px;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid black;
 }
 
 #chat_container {

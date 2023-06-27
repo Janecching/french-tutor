@@ -9,39 +9,42 @@
 	</head>
 
 	<body>
-		<div id="title">
-			<h1 style="margin-bottom: 20px">My french tutor</h1>
+		<div class="container">
+			<div class="left">
+				<h1 style="margin-bottom: 20px">My French Tutor</h1>
+				<form id="preference-form">
+					<label for="language">Language:</label>
+					<select id="language" name="language">
+						<option value="French">French</option>
+					</select>
 
-			<form>
-				<label for="language">Language:</label>
-				<select id="language" name="language">
-					<option value="French">French</option>
-				</select>
+					<label for="level">Level:</label>
+					<select id="level" name="level">
+						<option value="Beginner">Beginner</option>
+						<option value="Intermediate">Intermediate</option>
+					</select>
 
-				<label for="level">Level:</label>
-				<select id="level" name="level">
-					<option value="Beginner">Beginner</option>
-					<option value="Intermediate">Intermediate</option>
-				</select>
+					<label for="scenario">Scenario:</label>
+					<select id="scenario" name="scenario">
+						<option value="waitress">Ordering food</option>
+						<option value="hotel receptionist">Checking in a hotel</option>
+						<option value="tourist information conceirge">
+							Asking for directions
+						</option>
+						<option value="vendor at a market">Shopping at a market</option>
+					</select>
 
-				<label for="scenario">Scenario:</label>
-				<select id="scenario" name="scenario">
-					<option value="Ordering food">Ordering food</option>
-					<option value="Checking in a hotel">Checking in a hotel</option>
-					<option value="Asking for directions">Asking for directions</option>
-					<option value="Shopping at a market">Shopping at a market</option>
-					<!-- Add more scenario options if needed -->
-				</select>
+					<div style="align-items: center">
+						<button id="vocabButton">Start</button>
+					</div>
+				</form>
 
-				<button id="vocabButton">Generate Vocab</button>
-			</form>
+				<table>
+					<tbody id="vocabTable"></tbody>
+				</table>
+			</div>
 
-			<div id="results"></div>
-
-			<div id="results"></div>
-		</div>
-		<div id="app">
-			<div>
+			<div class="right">
 				<div id="chat_container">
 					<div class="wrapper">
 						<div class="chat">
@@ -49,7 +52,7 @@
 								<img src="./assets/bot.svg" />
 							</div>
 							<div class="message">
-								Bonjour ! Comment puis-je vous aider aujourd'hui ? (Translation:
+								Bonjour! Comment puis-je vous aider aujourd'hui ? (Translation:
 								Hello! How can I assist you today?)
 							</div>
 						</div>
@@ -62,12 +65,8 @@
 						cols="1"
 						placeholder="type here and press enter to submit"
 					></textarea>
-					<!-- <button type="submit">
-						<img src="assets/send.svg" alt="send" />
-					</button> -->
 				</form>
 			</div>
-			<!-- <div id="additional_column"></div> -->
 		</div>
 
 		<script type="module" src="script.js"></script>
