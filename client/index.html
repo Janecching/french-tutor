@@ -11,11 +11,34 @@
 	<body>
 		<div id="title">
 			<h1 style="margin-bottom: 20px">My french tutor</h1>
-			<p style="margin-bottom: 10px">Select a scenario:</p>
-			<button>Ordering food</button>
-			<button>Checking in a hotel</button>
-			<button>Asking for directions</button>
-			<button>Shopping at a market</button>
+
+			<form>
+				<label for="language">Language:</label>
+				<select id="language" name="language">
+					<option value="French">French</option>
+				</select>
+
+				<label for="level">Level:</label>
+				<select id="level" name="level">
+					<option value="Beginner">Beginner</option>
+					<option value="Intermediate">Intermediate</option>
+				</select>
+
+				<label for="scenario">Scenario:</label>
+				<select id="scenario" name="scenario">
+					<option value="Ordering food">Ordering food</option>
+					<option value="Checking in a hotel">Checking in a hotel</option>
+					<option value="Asking for directions">Asking for directions</option>
+					<option value="Shopping at a market">Shopping at a market</option>
+					<!-- Add more scenario options if needed -->
+				</select>
+
+				<button id="vocabButton">Generate Vocab</button>
+			</form>
+
+			<div id="results"></div>
+
+			<div id="results"></div>
 		</div>
 		<div id="app">
 			<div>
@@ -32,7 +55,7 @@
 						</div>
 					</div>
 				</div>
-				<form>
+				<form id="userPromptForm">
 					<textarea
 						name="prompt"
 						rows="1"
